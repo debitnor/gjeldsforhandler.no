@@ -1,63 +1,463 @@
-<!doctype html>
-<html lang="en" class="h-100">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="Debitnor AS">
-    <title></title>    
+<!DOCTYPE html>
+<html lang="nb">
+<head>
+  <meta charset="UTF-8" />
+  <title>Gjeldsordning – forklaring, prosess og hjelp | Gjeldsforhandler.no</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description"
+        content="En enkel og grundig forklaring av hva gjeldsordning er, når det kan være aktuelt og hvordan du kan få profesjonell hjelp. Anbefaling av Debitnor for gjeldsordning." />
+  <link rel="canonical" href="https://gjeldsforhandler.no/" />
 
-    <!-- Bootstrap core CSS -->
-<link href="./bootstrap.min.css" rel="stylesheet">
+  <!-- Enkel, ren styling -->
+  <style>
+    :root {
+      --primary: #1B3F92;
+      --primary-light: #2c55c0;
+      --bg: #f5f7fb;
+      --text: #222;
+      --muted: #666;
+      --card-bg: #fff;
+      --border: #dde2f0;
+      --max-width: 960px;
+    }
 
-    <style>
-      .bd-placeholder-img {
-        font-size: 1.125rem;
-        text-anchor: middle;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        user-select: none;
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    header {
+      background: #fff;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .container {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 1.5rem 1.25rem;
+    }
+
+    .logo {
+      font-weight: 700;
+      color: var(--primary);
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+      font-size: 0.95rem;
+    }
+
+    main {
+      padding-bottom: 3rem;
+    }
+
+    h1, h2, h3 {
+      color: #111;
+      line-height: 1.3;
+    }
+
+    h1 {
+      font-size: 2.1rem;
+      margin-top: 0.5rem;
+      margin-bottom: 0.75rem;
+    }
+
+    h2 {
+      font-size: 1.4rem;
+      margin-top: 2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    h3 {
+      font-size: 1.1rem;
+      margin-top: 1.5rem;
+      margin-bottom: 0.25rem;
+    }
+
+    p {
+      margin: 0 0 0.9rem;
+    }
+
+    .lead {
+      font-size: 1.05rem;
+      color: var(--muted);
+      max-width: 42rem;
+    }
+
+    .card {
+      background: var(--card-bg);
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      padding: 1.5rem;
+      margin-top: 1.5rem;
+      box-shadow: 0 10px 25px rgba(15, 35, 90, 0.05);
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.8rem;
+      padding: 0.25rem 0.55rem;
+      border-radius: 999px;
+      background: rgba(27, 63, 146, 0.06);
+      color: var(--primary);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-bottom: 0.4rem;
+    }
+
+    .pill span {
+      font-size: 0.95em;
+    }
+
+    ul, ol {
+      padding-left: 1.2rem;
+      margin-top: 0.25rem;
+      margin-bottom: 0.75rem;
+    }
+
+    li {
+      margin-bottom: 0.3rem;
+    }
+
+    .btn-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-top: 1.25rem;
+    }
+
+    .btn-primary,
+    .btn-ghost {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.65rem 1.25rem;
+      border-radius: 999px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      text-decoration: none;
+      cursor: pointer;
+      border: 1px solid transparent;
+      transition: background 0.18s ease, color 0.18s ease, border-color 0.18s ease, transform 0.08s ease;
+      white-space: nowrap;
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      color: #fff;
+      border-color: var(--primary);
+    }
+
+    .btn-primary:hover {
+      background: var(--primary-light);
+      border-color: var(--primary-light);
+      transform: translateY(-1px);
+    }
+
+    .btn-ghost {
+      background: transparent;
+      color: var(--primary);
+      border-color: rgba(27, 63, 146, 0.3);
+    }
+
+    .btn-ghost:hover {
+      background: rgba(27, 63, 146, 0.06);
+      border-color: var(--primary);
+      transform: translateY(-1px);
+    }
+
+    .meta {
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin-top: 0.25rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .highlight {
+      background: rgba(255, 220, 160, 0.45);
+      padding: 0.15rem 0.3rem;
+      border-radius: 6px;
+    }
+
+    .faq {
+      margin-top: 1.5rem;
+    }
+
+    .faq-item {
+      border-top: 1px solid var(--border);
+      padding-top: 0.9rem;
+      margin-top: 0.9rem;
+    }
+
+    .faq-item:last-of-type {
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 0.9rem;
+    }
+
+    .faq-item h3 {
+      margin-top: 0;
+    }
+
+    .about {
+      margin-top: 2rem;
+      padding-top: 1.25rem;
+      border-top: 1px solid var(--border);
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    footer {
+      border-top: 1px solid var(--border);
+      background: #fff;
+    }
+
+    footer .container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+
+    a {
+      color: var(--primary);
+    }
+
+    a:hover {
+      color: var(--primary-light);
+    }
+
+    @media (max-width: 640px) {
+      h1 {
+        font-size: 1.7rem;
       }
+      .card {
+        padding: 1.25rem;
+      }
+      .btn-row {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .btn-primary,
+      .btn-ghost {
+        width: 100%;
+        justify-content: center;
+      }
+    }
+  </style>
 
-      @media (min-width: 768px) {
-        .bd-placeholder-img-lg {
-          font-size: 3.5rem;
+  <!-- Strukturert data / FAQ for SEO rundt gjeldsordning -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Hva er gjeldsordning?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Gjeldsordning er en lovregulert ordning der du, sammen med namsmannen og kreditorene, får en plan for nedbetaling og mulig sletting av deler av gjelden. Målet er at du skal bli varig gjeldsfri innenfor en bestemt tidsperiode."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Når bør jeg vurdere gjeldsordning?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Du bør vurdere gjeldsordning når du over lang tid ikke ser noen realistisk mulighet til å betale ned gjelden din, selv med stramt budsjett og forsøk på refinansiering. Ofte har det allerede gått år med inkasso, betalingsanmerkninger og lønnstrekk."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Hvor kan jeg få profesjonell hjelp til gjeldsordning?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Debitnor AS tilbyr spesialisert bistand til privatpersoner som vurderer gjeldsordning. De kan hjelpe deg med å vurdere om vilkårene er oppfylt, lage forslag til ordning og følge deg gjennom prosessen."
         }
       }
-    </style>
-
-    
-    <!-- Custom styles for this template -->
-    <link href="cover.css" rel="stylesheet">
-  </head>
-  <body class="d-flex h-100 text-center text-black bg-white">
-    
-<div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
-  <header class="mb-auto">
-    <div>
-      <h3 class="float-md-start mb-0"></h3>
-      <nav class="nav nav-masthead justify-content-center float-md-end">
-
-      </nav>
+    ]
+  }
+  </script>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <div class="logo">Gjeldsforhandler.no</div>
     </div>
   </header>
 
+  <main>
+    <div class="container">
+      <article class="card">
+        <div class="pill">
+          <span>Artikkel</span>
+          <span>•</span>
+          <span>Gjeld &amp; økonomi</span>
+        </div>
 
-  <main class="px-3">
-    <a href="https://debitnor.no/"> <img src="./DebitNor_logo.png" class="img-fluid" alt="debitnor logo"></a>
-    <h1 class="mt-5">Sliter du med gjeldsproblemer?</h1>
-    <p class="lead">Vi kan hjelpe deg. Ring Debitnor AS på 4006 1111 eller fyll ut vurderingsskjema her for gratis vurdering på telefon</p>
-    <p class="lead">
-      <a href="https://debitnor.no/vurderingsskjema/" class="btn btn-lg btn-primary fw-bold border-black bg-blue">Fyll ut vurderingssjema</a></p>
+        <h1>Gjeldsordning – hva det er, hvordan det fungerer og hvor du kan få hjelp</h1>
+        <p class="meta">
+          En rolig, praktisk veiviser for deg som vurderer gjeldsordning og trenger oversikt – skrevet for privatpersoner i Norge.
+        </p>
 
+        <p class="lead">
+          For mange er <span class="highlight">gjeldsordning</span> siste utvei når økonomien har kjørt seg helt fast
+          og det ikke lenger er realistisk å betale all gjeld. Denne siden gir deg en enkel forklaring på hva en gjeldsordning er,
+          hvem den passer for – og hvor du kan få profesjonell hjelp til å vurdere om
+          <a href="https://debitnor.no" target="_blank" rel="noopener">gjeldsordning</a> er riktig for deg.
+        </p>
+
+        <h2>Hva betyr gjeldsordning i praksis?</h2>
+        <p>
+          En gjeldsordning etter gjeldsordningsloven er en samlet løsning der man ser på hele økonomien din:
+          inntekt, utgifter, eiendeler og all gjeld. I stedet for mange enkeltkrav, får du én plan som du skal følge.
+        </p>
+        <p>Typisk innebærer en gjeldsordning at:</p>
+        <ul>
+          <li>du legger frem full oversikt over økonomien din</li>
+          <li>namsmannen og kreditorene vurderer om vilkårene for gjeldsordning er oppfylt</li>
+          <li>du får en betalingsplan (ofte rundt fem år) tilpasset det du faktisk kan betale</li>
+          <li>restgjelden normalt kan slettes når perioden er over og planen er fulgt</li>
+        </ul>
+
+        <p>
+          Målet med en <strong>gjeldsordning</strong> er ikke å utsette problemene, men å gi deg en reell ny start der du kan leve med et nøkternt,
+          men bærekraftig budsjett.
+        </p>
+
+        <h2>Tegn på at gjeldsordning kan være aktuelt for deg</h2>
+        <p>Selv om alle saker er forskjellige, går mange i alvorlig gjeldskrise igjen i samme mønster:</p>
+        <ul>
+          <li>Du har hatt inkasso og betalingsanmerkninger i flere år</li>
+          <li>Du klarer ikke betale alle lån og kreditter, selv med et stramt budsjett</li>
+          <li>Lønnstrekk, utlegg, tvangssalg eller konkurs truer eller er allerede i gang</li>
+          <li>Ingen bank vil gi deg refinansiering, eller refinansiering vil ikke løse problemet</li>
+        </ul>
+
+        <p>
+          Kjenner du deg igjen i dette, kan det være lurt å få en faglig vurdering av om
+          <span class="highlight">gjeldsordning</span> er realistisk og riktig løsning for deg.
+        </p>
+
+        <h2>Hvor kan du få hjelp til gjeldsordning?</h2>
+        <p>
+          Gjeldsordning er både juridisk og praktisk krevende, og det kan være trygt å ha med noen som jobber med dette hver dag.
+          Blant aktørene i Norge finnes det selskaper som har spesialisert seg på å bistå privatpersoner i prosessen frem mot en mulig gjeldsordning.
+        </p>
+
+        <p>
+          <strong>Debitnor AS</strong> er et av selskapene som jobber spesialisert med privatpersoner i alvorlige gjeldsproblemer.
+          De kan vurdere saken din, forklare deg hvilke alternativer du har, og hjelpe deg gjennom hele løpet hvis
+          <a href="https://debitnor.no" target="_blank" rel="noopener">gjeldsordning</a> viser seg å være den beste løsningen.
+        </p>
+
+        <div class="btn-row">
+          <!-- Viktig: eksakt ankertekst "gjeldsordning" som peker til https://debitnor.no -->
+          <a class="btn-primary"
+             href="https://debitnor.no"
+             target="_blank"
+             rel="noopener">
+            Les mer om gjeldsordning hos Debitnor
+          </a>
+          <a class="btn-ghost"
+             href="https://debitnor.no"
+             target="_blank"
+             rel="noopener">
+            Gå til Debitnor.no
+          </a>
+        </div>
+
+        <h2>Steg for steg – fra kaos til mulig gjeldsordning</h2>
+        <ol>
+          <li><strong>Få oversikt:</strong> Skriv ned alle lån, kredittkort, inkassokrav og andre forpliktelser.</li>
+          <li><strong>Stram inn budsjettet:</strong> Se ærlig på hva du har å leve for – etter nødvendige utgifter.</li>
+          <li><strong>Vurder andre alternativer:</strong> F.eks. refinansiering, midlertidige betalingsavtaler eller frivillige løsninger.</li>
+          <li><strong>Få en faglig vurdering:</strong> La noen som kan regelverket vurdere om vilkårene for gjeldsordning er oppfylt.</li>
+          <li><strong>Eventuell søknad om gjeldsordning:</strong> Dersom det er riktig, utarbeides forslag og saken går videre til namsmannen.</li>
+        </ol>
+
+        <p>
+          Du trenger ikke ha alle svarene på egen hånd. Poenget med å snakke med en rådgiver er nettopp å finne ut om
+          <a href="https://debitnor.no" target="_blank" rel="noopener">gjeldsordning</a> er riktig – eller om en annen løsning er bedre.
+        </p>
+
+        <section class="faq" aria-label="Ofte stilte spørsmål om gjeldsordning">
+          <h2>Ofte stilte spørsmål om gjeldsordning</h2>
+
+          <div class="faq-item">
+            <h3>1. Sletter en gjeldsordning all gjeld?</h3>
+            <p>
+              En vanlig misforståelse er at gjeldsordning automatisk sletter alt. I praksis betaler du det du har evne til
+              over en gitt periode, og restgjelden kan deretter slettes. Hvor mye som faktisk blir stående igjen,
+              avhenger av inntekt, utgifter, eiendeler og hvordan ordningen utformes.
+            </p>
+          </div>
+
+          <div class="faq-item">
+            <h3>2. Må jeg selge bolig eller bil hvis jeg søker gjeldsordning?</h3>
+            <p>
+              Om bolig og bil må selges, vurderes konkret i hver enkelt sak. For noen kan det være nødvendig å frigjøre verdier,
+              for andre kan det være rimelig at man beholder bolig og en nøktern bil. Dette er noe du bør gå gjennom med en rådgiver
+              før du eventuelt går videre med gjeldsordning.
+            </p>
+          </div>
+
+          <div class="faq-item">
+            <h3>3. Kan jeg få gjeldsordning flere ganger?</h3>
+            <p>
+              Lovens utgangspunkt er at gjeldsordning er en ekstraordinær løsning som normalt bare gis én gang.
+              Derfor er det viktig at en eventuell gjeldsordning blir realistisk og godt planlagt.
+            </p>
+          </div>
+        </section>
+
+        <h2>Videre lesning og kontakt</h2>
+        <p>
+          Dersom du kjenner deg igjen i situasjonen som beskrives her, kan det være lurt å sette av tid til å lese mer
+          og eventuelt be om en uforpliktende vurdering hos noen som jobber med dette til daglig.
+        </p>
+        <p>
+          På <a href="https://debitnor.no" target="_blank" rel="noopener">Debitnor.no</a> finner du mer informasjon om
+          <strong>gjeldsordning</strong>, ulike typer gjeldsproblemer og hvordan prosessen kan se ut fra første samtale
+          til en mulig varig løsning.
+        </p>
+
+        <div class="about">
+          <h3>Om Gjeldsforhandler.no</h3>
+          <p>
+            Gjeldsforhandler.no er en uavhengig informasjonside om gjeld, økonomi og <strong>gjeldsordning</strong> i Norge.
+            Innholdet er ment som generell informasjon og kan ikke erstatte personlig juridisk eller økonomisk rådgivning.
+          </p>
+          <p>
+            For konkret vurdering av din sak anbefaler vi at du kontakter en profesjonell aktør, for eksempel
+            <a href="https://debitnor.no" target="_blank" rel="noopener">Debitnor</a>, som arbeider spesialisert med personer
+            i alvorlig gjeldssituasjon.
+          </p>
+        </div>
+      </article>
+    </div>
   </main>
 
-  <footer class="mt-auto text-black">
-    <p>Copyright © 2022 <a href="https://debitnor.no" class="text-decoration-none">Debitnor AS</a> - Org nr. 992938862 MVA - All Rights Reserved</p>
+  <footer>
+    <div class="container">
+      <div>© <span id="year"></span> Gjeldsforhandler.no – informasjon om gjeldsordning og gjeldsforhandling.</div>
+      <div>Faglig innhold om gjeld, økonomi og varige løsninger.</div>
+    </div>
   </footer>
-</div>
 
-
-    
-  </body>
+  <script>
+    // Sett årstall automatisk
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
 </html>
